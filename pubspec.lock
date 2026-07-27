@@ -127,7 +127,7 @@ packages:
     source: hosted
     version: "6.1.5"
   flutter_inappwebview_android:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: flutter_inappwebview_android
       sha256: "8dfb76bd4e507112c3942c2272eeb01fab2e42be11374e5eb226f58698e7a04b"
@@ -254,7 +254,7 @@ packages:
     source: hosted
     version: "0.20.2"
   jni:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: jni
       sha256: ca1efa31ef27a0b8ecbb4f8dcf3785e5ad1b8a54c64af9b72d287ae81f93a4f4

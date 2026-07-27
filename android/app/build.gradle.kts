@@ -1,9 +1,8 @@
 plugins {
-    id("com.android.application")
-    // ✅ إضافة بلاجين كوتلن الضروري لحل مشكلة jni و kotlin()
-    id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id("dev.flutter.flutter-gradle-plugin")
+    // ✅ أضف السطر ده هنا لتعريف بلاجين كوتلن على مستوى المشروع ككل
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+    id("com.android.application") version "8.2.1" apply false
+    id("dev.flutter.flutter-gradle-plugin") version "1.0.0" apply false
 }
 
 android {
