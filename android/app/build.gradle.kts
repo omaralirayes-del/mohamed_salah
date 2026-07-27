@@ -1,6 +1,6 @@
 plugins {
-    // ✅ أضف السطر ده هنا لتعريف بلاجين كوتلن على مستوى المشروع ككل
-    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+    // ✅ غير الإصدار هنا إلى 2.3.20
+    id("org.jetbrains.kotlin.android") version "2.3.20" apply false
     id("com.android.application") version "8.2.1" apply false
     id("dev.flutter.flutter-gradle-plugin") version "1.0.0" apply false
 }
