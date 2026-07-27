@@ -14,15 +14,14 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
   @override
   void initState() {
     super.initState();
-    // إعداد الكنترولر مع الإعدادات الموصى بها لتجنب الشاشة السوداء
+    // ✅ فيديو جميع أهداف محمد صلاح الرسمي من قناة ليفربول
     _controller = YoutubePlayerController.fromVideoId(
-      videoId: '0cgaqJWAbT4',
+      videoId: 'ecyrUeqkqYI',
       params: const YoutubePlayerParams(
         showControls: true,
         showFullscreenButton: true,
         mute: false,
-        showVideoAnnotations: false,
-        enableJavaScript: true, // ✅ تفعيل جافاسكريبت لضمان عمل المشغل
+        enableJavaScript: true,
       ),
     );
   }
@@ -48,7 +47,6 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 10),
-                // ✅ إضافة Container حول المشغل لضمان أبعاد متناسقة
                 AspectRatio(
                   aspectRatio: 16 / 9,
                   child: player,
@@ -57,7 +55,7 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
-                    "شاهد جميع أهداف الأسطورة محمد صلاح منذ بدايته وحتى الآن!",
+                    "شاهد جميع 257 هدفاً للأسطورة محمد صلاح مع نادي ليفربول!",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -76,7 +74,6 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
 
   @override
   void dispose() {
-    // ✅ إغلاق الكنترولر عند الخروج من الشاشة لتحرير الذاكرة
     _controller.close();
     super.dispose();
   }
