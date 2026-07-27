@@ -3,9 +3,12 @@ import 'package:mohamed_salah/front.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 // أضف هذا السطر في دالة main() قبل runApp() لمنع الأخطاء أثناء التطوير
-void main() {
+
+
+  void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  GoogleFonts.config.allowRuntimeFetching = true; // أو false إذا قمت بإضافة الخط يدويًا في المجلدات
+  
+  GoogleFonts.config.allowRuntimeFetching = true; 
   runApp(const MyApp());
 }
 

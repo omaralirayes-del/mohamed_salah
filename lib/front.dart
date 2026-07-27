@@ -10,6 +10,7 @@ import 'package:mohamed_salah/mokawlon.dart';
 import 'package:mohamed_salah/outfootball.dart';
 import 'package:mohamed_salah/roma.dart';
 import 'package:mohamed_salah/masera.dart';
+import 'package:mohamed_salah/salah_goals.dart';
 import 'package:mohamed_salah/selflife.dart';
 
 class front extends StatelessWidget {
@@ -18,6 +19,21 @@ class front extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: MaterialButton(
+          onPressed: () {
+            Navigator.of(
+              context,
+            ).push(MaterialPageRoute(builder: (context) => SalahVideoScreen()));
+          },
+          child: Text(
+            "جميع أهداف محمد صلاح",
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 9,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
         title: Text(
           "محمد صلاح ",
           style: TextStyle(
@@ -57,11 +73,16 @@ class front extends StatelessWidget {
                     color: Colors.black,
                     margin: EdgeInsets.only(top: 40, right: 60, left: 60),
                     child: ListTile(
-                      leading: ClipRRect(
+                      leading: SizedBox(
+                        height: 50,
+                        width: 50,
+                        child: 
+                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
                           "images/Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_(cropped).jpg",
                         ),
+                      ),
                       ),
                       trailing: Text(
                         "عن محمد صلاح ",
@@ -293,9 +314,9 @@ class front extends StatelessWidget {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    Navigator.of(
-                      context,
-                    ).push(MaterialPageRoute(builder: (context) => outfootball()));
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => outfootball()),
+                    );
                   },
                   child: Card(
                     color: Colors.black,
