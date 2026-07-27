@@ -14,17 +14,16 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+  defaultConfig {
         applicationId = "com.example.mohamed_salah"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-       minSdkVersion 21
+        
+        // ✅ الصياغة الصحيحة المطلوبة
+        minSdk = 21
+        
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
-
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
