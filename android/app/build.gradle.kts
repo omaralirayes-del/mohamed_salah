@@ -1,9 +1,9 @@
 plugins {
-    // ✅ بدون تحديد أرقام إصدارات لترك السيرفر يستخدم ما لديه دون تصادم
-    id("com.android.application") apply false
-    id("org.jetbrains.kotlin.android") apply false
-    id("dev.flutter.flutter-gradle-plugin") apply false
+    id("com.android.application")
+    id("kotlin-android")
+    id("dev.flutter.flutter-gradle-plugin")
 }
+
 android {
     namespace = "com.example.mohamed_salah"
     compileSdk = flutter.compileSdkVersion
@@ -24,8 +24,6 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
     }
