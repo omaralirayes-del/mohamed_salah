@@ -1,10 +1,8 @@
 plugins {
-    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
-    id("com.android.application") version "8.2.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.0.21" apply false // ✅ تأكد أنها 2.0.21
+    id("com.android.application")
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id("dev.flutter.flutter-gradle-plugin")
 }
-
-
 
 android {
     namespace = "com.example.mohamed_salah"
@@ -17,15 +15,16 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.mohamed_salah"
-        minSdk = 21
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
-    }
-
+    applicationId = "com.example.mohamed_salah"
+    minSdk = 21  // ✅ قم بتعديل هذا السطر فقط إلى 21
+    targetSdk = flutter.targetSdkVersion
+    versionCode = flutter.versionCode
+    versionName = flutter.versionName
+}
     buildTypes {
         release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
         }
     }

@@ -1,17 +1,3 @@
-buildscript {
-    // ✅ تحديث الإصدار لـ 2.0.21
-    extra["kotlin_version"] = "2.0.21"
-    
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        // ✅ تحديث البلاجين هنا أيضاً
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.0.21")
-    }
-}
-
 allprojects {
     repositories {
         google()
@@ -19,7 +5,10 @@ allprojects {
     }
 }
 
-val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
+val newBuildDir: Directory =
+    rootProject.layout.buildDirectory
+        .dir("../../build")
+        .get()
 rootProject.layout.buildDirectory.value(newBuildDir)
 
 subprojects {
