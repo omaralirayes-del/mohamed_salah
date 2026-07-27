@@ -1,10 +1,9 @@
 plugins {
-    // ✅ غير الإصدار هنا إلى 2.3.20
-    id("org.jetbrains.kotlin.android") version "2.3.20" apply false
-    id("com.android.application") version "8.2.1" apply false
-    id("dev.flutter.flutter-gradle-plugin") version "1.0.0" apply false
+    // ✅ بدون تحديد أرقام إصدارات لترك السيرفر يستخدم ما لديه دون تصادم
+    id("com.android.application") apply false
+    id("org.jetbrains.kotlin.android") apply false
+    id("dev.flutter.flutter-gradle-plugin") apply false
 }
-
 android {
     namespace = "com.example.mohamed_salah"
     compileSdk = flutter.compileSdkVersion
