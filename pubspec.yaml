@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.1.0
-  youtube_player_flutter: ^9.1.1 # أو قم بإزالة التحديد الجبري واكتب ^10.0.1
+  youtube_player_flutter: ^10.0.1
   flutter_inappwebview: ^6.1.5
   flutter_localizations:
     sdk: flutter
@@ -106,3 +106,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+dependency_overrides:
+  flutter_inappwebview_android: ^1.1.6
