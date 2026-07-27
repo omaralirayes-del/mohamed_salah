@@ -14,13 +14,15 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
   @override
   void initState() {
     super.initState();
-    // إنشاء الكنترولر باستخدام معرف الفيديو
+    // إعداد الكنترولر مع الإعدادات الموصى بها لتجنب الشاشة السوداء
     _controller = YoutubePlayerController.fromVideoId(
       videoId: '0cgaqJWAbT4',
       params: const YoutubePlayerParams(
         showControls: true,
         showFullscreenButton: true,
         mute: false,
+        showVideoAnnotations: false,
+        enableJavaScript: true, // ✅ تفعيل جافاسكريبت لضمان عمل المشغل
       ),
     );
   }
@@ -46,8 +48,11 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 10),
-                // مشغل الفيديو
-                player,
+                // ✅ إضافة Container حول المشغل لضمان أبعاد متناسقة
+                AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: player,
+                ),
                 const SizedBox(height: 20),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -68,5 +73,11 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
       },
     );
   }
+
+  @override
+  void dispose() {
+    // ✅ إغلاق الكنترولر عند الخروج من الشاشة لتحرير الذاكرة
+    _controller.close();
+    super.dispose();
+  }
 }
-    
