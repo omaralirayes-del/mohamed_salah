@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class SalahVideoScreen extends StatefulWidget {
   const SalahVideoScreen({super.key});
@@ -14,23 +14,31 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
   @override
   void initState() {
     super.initState();
-    // ✅ فيديو جميع أهداف محمد صلاح الرسمي من قناة ليفربول
-    _controller = YoutubePlayerController.fromVideoId(
-      videoId: 'ecyrUeqkqYI',
-      params: const YoutubePlayerParams(
-        showControls: true,
-        showFullscreenButton: true,
+    // إعداد المشغل للمكتبة الجديدة
+    _controller = YoutubePlayerController(
+      initialVideoId: 'ecyrUeqkqYI', // فيديو جميع الأهداف
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
         mute: false,
-        enableJavaScript: true,
+        enableCaption: true,
+        isLive: false,
+        forceHD: false,
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return YoutubePlayerScaffold(
-      controller: _controller,
-      aspectRatio: 16 / 9,
+    return YoutubePlayerBuilder(
+      player: YoutubePlayer(
+        controller: _controller,
+        showVideoProgressIndicator: true,
+        progressIndicatorColor: Colors.red,
+        progressColors: const ProgressBarColors(
+          playedColor: Colors.red,
+          handleColor: Colors.redAccent,
+        ),
+      ),
       builder: (context, player) {
         return Scaffold(
           backgroundColor: Colors.black,
@@ -47,10 +55,8 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 10),
-                AspectRatio(
-                  aspectRatio: 16 / 9,
-                  child: player,
-                ),
+                // عرض المشغل
+                player,
                 const SizedBox(height: 20),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -74,7 +80,7 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
 
   @override
   void dispose() {
-    _controller.close();
+    _controller.dispose();
     super.dispose();
   }
 }
