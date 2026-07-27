@@ -1,8 +1,10 @@
 plugins {
-    id("com.android.application")
-    id("kotlin-android")
-    id("dev.flutter.flutter-gradle-plugin")
+    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+    id("com.android.application") version "8.2.1" apply false
+    id("org.jetbrains.kotlin.android") version "2.0.21" apply false // ✅ تأكد أنها 2.0.21
 }
+
+
 
 android {
     namespace = "com.example.mohamed_salah"
