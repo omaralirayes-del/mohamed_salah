@@ -1,10 +1,12 @@
 buildscript {
+    // ✅ إعطاء مكتبة jni المتغير الذي تبحث عنه بأسلوب Kotlin DSL
+    extra["kotlin_version"] = "1.9.22"
+    
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        // ✅ إضافة كوتلن كـ Classpath رئيسي لكي تراه مكتبة :jni وبقية المكتبات الخارجية
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
     }
 }
