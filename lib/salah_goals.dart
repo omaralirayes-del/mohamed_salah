@@ -46,9 +46,9 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
   @override
   Widget build(BuildContext context) {
     return YoutubePlayerBuilder(
-      // يسمح بدعم الوضع الأفقي (Full Screen) تلقائياً أثناء مشاهدة الفيديو
       player: YoutubePlayer(
         controller: _controller,
+        aspectRatio: 16 / 9, // ✅ إجبار الفيديو على أبعاد 16:9
         showVideoProgressIndicator: true,
         progressIndicatorColor: Colors.red,
         progressColors: const ProgressBarColors(
@@ -72,18 +72,13 @@ class _SalahVideoScreenState extends State<SalahVideoScreen> {
             child: Column(
               children: [
                 const SizedBox(height: 10),
-                // عرض مشغل الفيديو
-                player,
+                player, // عرض مشغل الفيديو
                 const SizedBox(height: 20),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
-                    "شاهد جميع أهداف الأسطورة محمد صلاح منذ بدايته وحتى الآن!",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
+                    "شاهد جميع أهداف الأسطورة محمد صلاح!",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
                 ),
