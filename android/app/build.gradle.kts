@@ -1,5 +1,7 @@
 plugins {
     id("com.android.application")
+    // ✅ إضافة بلاجين كوتلن الضروري لحل مشكلة jni و kotlin()
+    id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
@@ -14,16 +16,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-  defaultConfig {
+    defaultConfig {
         applicationId = "com.example.mohamed_salah"
-        
-        // ✅ الصياغة الصحيحة المطلوبة
         minSdk = 21
-        
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
